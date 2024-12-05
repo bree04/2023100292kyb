@@ -196,12 +196,18 @@ def sort_and_display(arr, algorithm):
         print("Invalid algorithm selected.")
 
 def main():
-    data_input = input("* Please input a data list: ")
-    arr = list(map(int, data_input.split(',')))
-    print(" * Target Sorting Algorithm List")
-    print(" Selection(SEL), Insertion(INS), Bubble(BUB), Shell(SHE), Heap(HEA), Merge(MER), Quick(QUI), Radix(RAD)")
-    algorithm = input(" * Select sorting algorithm: ").strip().upper()
-    sort_and_display(arr, algorithm)
+    while True:
+        data_input = input("* Please input a data list: ")
+        arr = list(map(int, data_input.split(',')))
+        print(" * Target Sorting Algorithm List")
+        print(" Selection(SEL), Insertion(INS), Bubble(BUB), Shell(SHE), Heap(HEA), Merge(MER), Quick(QUI), Radix(RAD)")
+        algorithm = input(" * Select sorting algorithm: ").strip().upper()
+        sort_and_display(arr, algorithm)
+        
+        exit_choice = input("Press 'p' to exit or any other key to continue: ").strip().lower()
+        if exit_choice == 'p':
+            print("Exiting program.")
+            break
 
 if __name__ == "__main__":
     main()
